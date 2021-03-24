@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000;
-const routerMessages = require("./routers/messages");
-const pug = require("pug");
+//const port = 3000
+const routerMessages = require("./routes/api/v1/messages");
+//const pug = require("pug");
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/lab5', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 
 app.use("/api/v1/messages", routerMessages);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+module.exports = app;
+
 

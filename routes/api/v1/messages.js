@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const controllerMessage = require("../controllers/message");
+const controllerMessage = require("../../../controllers/api/v1/messages");
 
 router.post('/', controllerMessage.store);
 

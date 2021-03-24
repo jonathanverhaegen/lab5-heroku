@@ -1,9 +1,9 @@
-const Message = require("../models/message");
+const Message = require("../../../models/messages");
 
 function store(req, res){
 
-    let username = "Pikachu"
-    let message = "nodejs isn’t hard, or is it?"
+    let username = req.query.user;
+    let message = req.query.text;
 
     let m = new Message();
     m.user = username;
@@ -86,9 +86,9 @@ function update(req,res){
 
     let change = req.query;
 
-    console.log(req.query);
+    console.log(change);
 
-    Message.findByIdAndUpdate(id,{change},(err,doc)=>{
+    Message.findByIdAndUpdate(id,change,(err,doc)=>{
         if(!err){
             res.json({
                 "status": "succes",
