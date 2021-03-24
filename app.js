@@ -16,5 +16,3 @@ app.get('/', (req, res) => {
 app.use("/api/v1/messages", routerMessages);
 
 module.exports = app;
-
-
