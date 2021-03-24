@@ -5,7 +5,7 @@ const routerMessages = require("./routes/api/v1/messages");
 //const pug = require("pug");
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://jonathanverhaegen:jonathan123@cluster0.ghtml.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://jonathanverhaegen:jonathan123@cluster0.ghtml.mongodb.net/lab5', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set("view engine", "pug");
 
