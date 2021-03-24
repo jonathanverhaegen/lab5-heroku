@@ -5,21 +5,44 @@ function store(req, res){
     let username = req.query.user;
     let message = req.query.text;
 
-    let m = new Message();
-    m.user = username;
-    m.text = message;
+    if(username == null || message == null){
+        username = "Pikachu";
+        message = "nodejs isn’t hard, or is it?"
 
-    m.save((err, doc) => {
-        if(!err){
-            res.json({
-                "status": "succes",
-                "data":{
+        let m = new Message();
+        m.user = username;
+        m.text = message;
+
+        m.save((err, doc) => {
+            if(!err){
+                res.json({
+                    "status": "succes",
+                    "data":{
                     "message": doc
-                }
-            })
-        }
-    });
+                    }
+             })
+            }
+     });
 
+    }else{
+
+        let m = new Message();
+        m.user = username;
+        m.text = message;
+
+        m.save((err, doc) => {
+            if(!err){
+                res.json({
+                    "status": "succes",
+                    "data":{
+                        "message": doc
+                 }
+             })
+            }
+        });
+
+    }
+    
 }
 
 
@@ -38,9 +61,6 @@ function getOne(req,res){
         }
     })
 
- /* res.json({
-    "message": `GETTING message with ID ${id}`,
-  });*/
 };
 
 
