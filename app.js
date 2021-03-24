@@ -4,6 +4,8 @@ const app = express()
 const routerMessages = require("./routes/api/v1/messages");
 //const pug = require("pug");
 const mongoose = require('mongoose');
+const cors = require('cors');
+app.use(cors());
 
 mongoose.connect('mongodb+srv://jonathanverhaegen:7BU40fdgvRV@cluster0.ghtml.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
