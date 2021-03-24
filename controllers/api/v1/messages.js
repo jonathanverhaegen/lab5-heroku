@@ -6,7 +6,7 @@ function store(req, res){
     let message = req.query.text;
 
     if(username == null || message == null){
-        username = "Pikachu";
+        username = "pikachu";
         message = "nodejs isn’t hard, or is it?"
 
         let m = new Message();
