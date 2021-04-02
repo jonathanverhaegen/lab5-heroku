@@ -58,6 +58,11 @@ function getOne(req,res){
                     "message": doc
                 }
             })
+        }else{
+            res.json({
+                "status": "succes",
+                "message": `Couldn't find a message by ${id}`
+            })
         }
     })
 
