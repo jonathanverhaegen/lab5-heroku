@@ -60,7 +60,7 @@ function getOne(req,res){
             })
         }else{
             res.json({
-                "status": "succes",
+                "status": "error",
                 "message": `Couldn't find a message by ${id}`
             })
         }
