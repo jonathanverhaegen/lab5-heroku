@@ -61,7 +61,7 @@ function getOne(req,res){
         }else{
             res.json({
                 "status": "error",
-                "message": `Couldn't find a message by ${id}`
+                "message": `couldn't find a message with id = ${id}`
             })
         }
     })
@@ -121,6 +121,11 @@ function update(req,res){
                     "message": doc
                 }
             })
+        }else{
+            res.json({
+                "status": "error",
+                "message": `couldn't find a message to update with id = ${id} `
+            })
         }
     })
 }
@@ -133,6 +138,11 @@ function deleteOne(req,res){
             res.json({
                 "status": "succes",
                 "message": "the message was removed"
+            })
+        }else{
+            res.json({
+                "status": "error",
+                "message": `couldn't find a message to delete with id = ${id} `
             })
         }
     })
